@@ -61,7 +61,7 @@ module tt_um_Alanduan21_triad01_top (
   wire decision_valid; // indicates when the decision is stable
 
   // module instatiations
-  triad_input_filter u_filter (
+  triad01_input_filter u_filter (
       .clk       (clk),
       .rst_n     (rst_n),
       .fc_live   (fc_live),
@@ -72,7 +72,7 @@ module tt_um_Alanduan21_triad01_top (
       .rc_score  (rc_score)
   );
 
-  triad_ternary_engine u_engine (
+  triad01_ternary_engine u_engine (
       .fc_score     (fc_score),
       .rc_score     (rc_score),
       .raw_decision (raw_decision)
