@@ -78,7 +78,7 @@ module tt_um_Alanduan21_triad01_top (
       .raw_decision (raw_decision)
   );
  
-  triad_decision_fsm u_fsm (
+  triad01_decision_fsm u_fsm (
       .clk            (clk),
       .rst_n          (rst_n),
       .raw_decision   (raw_decision),
