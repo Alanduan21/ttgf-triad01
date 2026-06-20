@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "triad01"      # Project title
-  author:       "Alan Duan Yihe"      # Your name
+  author:       "Duan Yihe"      # Your name
   discord:      "_alanthegreat"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "A ternary logic failsafe decision block for autonomous control paths, with scan and lightweight LBIST for diagnosis"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
