@@ -17,7 +17,7 @@
 
 `default_nettype none
 
-module triad_decision_fsm (
+module triad01_decision_fsm (
     input  wire       clk,
     input  wire       rst_n,
     input  wire [1:0] raw_decision,

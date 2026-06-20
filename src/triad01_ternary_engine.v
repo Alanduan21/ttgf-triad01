@@ -20,7 +20,7 @@
 
 `default_nettype none
 
-module triad_ternary_engine (
+module triad01_ternary_engine (
     input  wire [1:0] fc_score,
     input  wire [1:0] rc_score,
     output reg  [1:0] raw_decision

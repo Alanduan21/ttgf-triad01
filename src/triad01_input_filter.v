@@ -15,9 +15,9 @@
  
 `default_nettype none
 
-module triad_input_filter (
-    input wire clk;
-    input wire rst_n;
+module triad01_input_filter (
+    input wire clk,
+    input wire rst_n,
 
     // raw health inputs
     input wire fc_live,
