@@ -9,7 +9,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+A ternary logic failsafe decision block for autonomous control paths, with scan and lightweight LBIST for diagnosis. 
 
 ## How to test
 
