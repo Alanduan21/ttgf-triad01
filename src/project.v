@@ -58,6 +58,7 @@ module tt_um_Alanduan21_triad01_top (
   wire [1:0] fc_score;  // 2-bit score for FC health
   wire [1:0] rc_score;  // 2-bit score for RC health
   wire [1:0] raw_decision; // pre-hysteresis decision
+  wire [1:0] decision;     // final decision after hysteresis
   wire decision_valid; // indicates when the decision is stable
 
   // module instatiations
