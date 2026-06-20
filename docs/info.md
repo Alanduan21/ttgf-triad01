@@ -13,7 +13,7 @@ A ternary logic failsafe decision block for autonomous control paths, with scan 
 
 ## How to test
 
-Explain how to use your project
+temp placeholder
 
 ## External hardware
 
