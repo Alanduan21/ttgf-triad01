@@ -5,7 +5,7 @@ project:
   discord:      "_alanthegreat"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "TRIAD01 implements a hardware BitLinear layer — the core primitive of Microsoft's BitNet b1.58 architecture — applied to autonomous drone failsafe arbitration. Four health features are evaluated through a ternary weight matrix {-1, 0, +1} with no multipliers, producing three class scores. An argmax selects the failsafe action. Weights are fixed at synthesis time from an offline-trained policy. The design includes scan chain and LBIST, following industry DFT practice."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     10000000       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 340x160 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 3x4 or 4x4
