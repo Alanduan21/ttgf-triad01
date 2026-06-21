@@ -79,23 +79,23 @@ module triad01_scan_chain (
 
   // FF 0..3: fc_cnt[3:0]
   triad01_scan_ff ff0 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
-                        .d_func(fc_cnt_w[0]), .d_scan(scan_in),   .q(chain[0]));
+                        .d_func(fc_cnt[0]), .d_scan(scan_in),   .q(chain[0]));
   triad01_scan_ff ff1 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
-                        .d_func(fc_cnt_w[1]), .d_scan(chain[0]),  .q(chain[1]));
+                        .d_func(fc_cnt[1]), .d_scan(chain[0]),  .q(chain[1]));
   triad01_scan_ff ff2 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
-                        .d_func(fc_cnt_w[2]), .d_scan(chain[1]),  .q(chain[2]));
+                        .d_func(fc_cnt[2]), .d_scan(chain[1]),  .q(chain[2]));
   triad01_scan_ff ff3 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
-                        .d_func(fc_cnt_w[3]), .d_scan(chain[2]),  .q(chain[3]));
+                        .d_func(fc_cnt[3]), .d_scan(chain[2]),  .q(chain[3]));
 
   // FF 4..7: rc_cnt[3:0]
   triad01_scan_ff ff4 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
-                        .d_func(rc_cnt_w[0]), .d_scan(chain[3]),  .q(chain[4]));
+                        .d_func(rc_cnt[0]), .d_scan(chain[3]),  .q(chain[4]));
   triad01_scan_ff ff5 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
-                        .d_func(rc_cnt_w[1]), .d_scan(chain[4]),  .q(chain[5]));
+                        .d_func(rc_cnt[1]), .d_scan(chain[4]),  .q(chain[5]));
   triad01_scan_ff ff6 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
-                        .d_func(rc_cnt_w[2]), .d_scan(chain[5]),  .q(chain[6]));
+                        .d_func(rc_cnt[2]), .d_scan(chain[5]),  .q(chain[6]));
   triad01_scan_ff ff7 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
-                        .d_func(rc_cnt_w[3]), .d_scan(chain[6]),  .q(chain[7]));
+                        .d_func(rc_cnt[3]), .d_scan(chain[6]),  .q(chain[7]));
 
   assign scan_out    = chain[7];
   assign fc_cnt_obs  = chain[3:0];
