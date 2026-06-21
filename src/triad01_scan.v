@@ -65,8 +65,8 @@ module triad01_scan_chain (
     output wire       scan_out,
 
     // Functional data inputs (from actual registers)
-    input  wire [3:0] fc_cnt,
-    input  wire [3:0] rc_cnt,
+    input  wire [3:0] fc_cnt_w,
+    input  wire [3:0] rc_cnt_w,
 
     // Scan-observable outputs (read back internal state)
     // In functional mode these are just wires to internal state.

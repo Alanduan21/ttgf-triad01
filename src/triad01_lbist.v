@@ -120,6 +120,7 @@ module triad01_lbist (
       end else if (!bist_en) begin
         // Reset done flag when bist_en deasserted
         bist_done <= 1'b0;
+        // should we reset bist_pass here
       end
     end
   end
