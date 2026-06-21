@@ -131,7 +131,7 @@ module tt_um_Alanduan21_triad01_top (
   wire scan_in  = ui_in[4];
   wire scan_out;
 
-  triad01_scan_chain u_scan (
+  triad01_scan u_scan (
       .clk        (clk),
       .rst_n      (rst_n),
       .scan_en    (scan_en),
