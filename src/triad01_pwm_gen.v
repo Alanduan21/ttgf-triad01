@@ -38,7 +38,7 @@ module triad01_pwm_gen (
 );
 
   // Period counter: 200000 cycles at 10 MHz = 20 ms = 50 Hz
-  localparam PERIOD = 17'd200000;
+  localparam PERIOD = 18'd200000;
 
   reg [17:0] cnt;  // 18-bit to hold 0..199999
 
