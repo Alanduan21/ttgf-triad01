@@ -81,7 +81,7 @@ module triad01_scan_chain (
   triad01_scan_ff ff0 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
                         .d_func(fc_cnt_w[0]), .d_scan(scan_in),   .q(chain[0]));
   triad01_scan_ff ff1 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
-                        .d_func(fc_cnt[1]), .d_scan(chain[0]),  .q(chain[1]));
+                        .d_func(fc_cnt_w[1]), .d_scan(chain[0]),  .q(chain[1]));
   triad01_scan_ff ff2 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
                         .d_func(fc_cnt_w[2]), .d_scan(chain[1]),  .q(chain[2]));
   triad01_scan_ff ff3 (.clk(clk), .rst_n(rst_n), .scan_en(scan_en),
