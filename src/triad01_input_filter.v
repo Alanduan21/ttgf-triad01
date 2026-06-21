@@ -30,7 +30,7 @@ module triad01_input_filter (
 
     // 2-bit confidence scores out
     output wire [1:0] fc_score,
-    output wire [1:0] rc_score
+    output wire [1:0] rc_score,
 
     // Scan observability ports (wire out internal counters)
     output wire [3:0] fc_cnt_out,
