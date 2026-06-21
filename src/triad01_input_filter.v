@@ -11,6 +11,9 @@
  *   2'b10 = HIGH      (counter >= 12)
  *   2'b01 = DEGRADED  (counter 6..11)
  *   2'b00 = LOW       (counter <= 5)
+ * fc_cnt / rc_cnt are exposed as output ports so triad01_scan_chain
+ * can observe internal counter state without hierarchy penetration.
+ * Logic is otherwise identical to the original passing submission.
  */
  
 `default_nettype none
@@ -28,6 +31,10 @@ module triad01_input_filter (
     // 2-bit confidence scores out
     output wire [1:0] fc_score,
     output wire [1:0] rc_score
+
+    // Scan observability ports (wire out internal counters)
+    output wire [3:0] fc_cnt_out,
+    output wire [3:0] rc_cnt_out
 );
 
 // 4-bit counters, range 0..15
@@ -73,5 +80,9 @@ module triad01_input_filter (
   assign rc_score = (rc_cnt >= 4'd12) ? 2'b10 :
                     (rc_cnt >= 4'd6)  ? 2'b01 :
                                         2'b00;
+
+
+  assign fc_cnt_out = fc_cnt;
+  assign rc_cnt_out = rc_cnt;
  
 endmodule

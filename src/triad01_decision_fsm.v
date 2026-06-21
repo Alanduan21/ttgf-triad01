@@ -6,8 +6,9 @@
  * to be stable for STABLE_THRESH consecutive cycles
  * before committing to a new output state.
  *
- * decision_valid goes HIGH once the output has stabilised
- * and stays HIGH until a new transition begins.
+ * decision_valid goes HIGH once the output has stabilised and stays HIGH until a new transition begins.
+ * safehold_active goes HIGH whenever decision == SAFE_HOLD (2'b00),
+ * allowing pwm_memory to trigger the reversal output.
  *
  * Decision encoding:
  *   2'b10 = PRIMARY
@@ -22,14 +23,17 @@ module triad01_decision_fsm (
     input  wire       rst_n,
     input  wire [1:0] raw_decision,
     output reg  [1:0] decision,
-    output reg        decision_valid
+    output reg        decision_valid,
+    output wire     safehold_active // HIGH when decision == SAFE_HOLD
 );
 
   // Number of consecutive stable cycles before committing
   localparam STABLE_THRESH = 4'd8;
 
   reg [3:0] stable_cnt;
-  reg [1:0] candidate;   // decision we are evaluating
+  reg [1:0] candidate;   
+
+  assign safehold_active = (decision == 2'b00);
 
   always @(posedge clk or negedge rst_n) begin
     if (!rst_n) begin

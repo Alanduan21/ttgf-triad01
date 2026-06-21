@@ -2,7 +2,7 @@
  * triad_ternary_engine.v
  * Ternary policy inference engine for TRIAD01
  *
- * Pure combinational lookup over 2-bit scores.
+ * Pure combinational lookup over 2-bit scores from input_filter.
  * Implements a fixed ternary weight policy:
  *   RC preferred over FC on tie (human override priority)
  *   DEGRADED + LOW on both channels → SAFE_HOLD
@@ -20,14 +20,13 @@
 
 `default_nettype none
 
-module triad01_ternary_engine (
+module triad01_arbitration_engine (
     input  wire [1:0] fc_score,
     input  wire [1:0] rc_score,
     output reg  [1:0] raw_decision
 );
 
   // Combinational policy table
-  // Concatenate {rc_score, fc_score} for clean casez
   always @(*) begin
     casez ({rc_score, fc_score})
       // RC HIGH — always PRIMARY regardless of FC
