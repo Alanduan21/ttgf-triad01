@@ -119,8 +119,6 @@ module triad01_lbist (
           bist_done    <= 1'b1;
           bist_pass    <= (misr_next == GOLDEN_SIG) ? 1'b1 : 1'b0;
 
-          // debug print MISR
-          // $display("TRIAD01 LBIST FINAL MISR = %h", misr_next);
         end
       end else if (!bist_en) begin
         // Reset done flag when bist_en deasserted
