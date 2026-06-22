@@ -112,6 +112,9 @@ module triad01_lbist (
         bist_cnt <= bist_cnt + 9'd1;
 
         if (bist_cnt >= BIST_CYCLES - 1) begin
+
+          $display("TRIAD01 LBIST FINAL MISR = %h", misr_next);
+          
           // Done — compare MISR to golden signature
           bist_running <= 1'b0;
           bist_done    <= 1'b1;
