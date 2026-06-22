@@ -24,7 +24,6 @@ project:
     - "triad01_scan.v"
     - "triad01_lbist.v"
     - "triad01_pwm_gen.v"
-    - "triad01_pwm_memory.v"
     
   
 
