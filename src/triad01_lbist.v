@@ -61,7 +61,7 @@ module triad01_lbist (
 
   // Golden MISR signature — UPDATE THIS after first simulation run
   // Placeholder: 16'hDEAD — replace with actual simulation output
-  localparam GOLDEN_SIG  = 16'hDEAD;
+  localparam GOLDEN_SIG  = 16'h01F8;
 
   // 16-bit Galois LFSR
   // Polynomial: x^16 + x^15 + x^13 + x^4 + 1
@@ -120,7 +120,7 @@ module triad01_lbist (
           bist_pass    <= (misr_next == GOLDEN_SIG) ? 1'b1 : 1'b0;
 
           // debug print MISR
-          $display("TRIAD01 LBIST FINAL MISR = %h", misr_next);
+          // $display("TRIAD01 LBIST FINAL MISR = %h", misr_next);
         end
       end else if (!bist_en) begin
         // Reset done flag when bist_en deasserted
