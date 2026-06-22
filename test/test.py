@@ -264,12 +264,14 @@ async def test_lbist(dut):
     dut.ui_in.value  = ui_val(mode=MODE_LBIST)
     dut.uio_in.value = 0
     await ClockCycles(dut.clk, 300)
+    dut._log.info(f"MISR = 0x{int(dut.u_lbist.misr.value):04X}")
     assert get_bist_done(dut) == 1, "LBIST FAIL: bist_done not set after 300 cycles"
     dut._log.info(f"LBIST PASS: done=1 pass={get_bist_pass(dut)}")
     dut.ui_in.value = 0
     await ClockCycles(dut.clk, 2)
     assert get_bist_done(dut) == 0, "LBIST FAIL: bist_done did not clear"
     dut._log.info("LBIST PASS: clears on mode exit")
+    dut._log.info(f"MISR = 0x{int(dut.u_lbist.misr.value):04X}")
 
 # ─────────────────────────────────────────────────────────────────
 # Legacy combined — CI
